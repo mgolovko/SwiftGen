@@ -40,6 +40,12 @@ extension Strings {
   struct Localization: Decodable {
     let stringUnit: StringUnit?
     let variations: Variations?
+    let substitutions: [String: Substitution]?
+  }
+
+  struct Substitution: Decodable {
+    let formatSpecifier: String
+    let variations: Variations
   }
 
   struct Variations: Decodable {

@@ -7,7 +7,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ - %#@d2@ - %#@f3@ - %#@d5@ - %04$#@f4@ - %#@d6@ - %007$@ - %8$3.2#@f8@ - %#@f11@ - %9$@ - %#@d10@"
+            "value" : "%$@ - %#@d2@ - %#@f3@ - %#@d5@ - %#@f4@ - %#@d6@ - %$@ - %#@f8@ - %#@f11@ - %9$@ - %#@d10@"
           },
           "substitutions" : {
             "d2" : {
@@ -17,13 +17,13 @@
                   "one" : {
                     "stringUnit" : {
                       "state" : "translated",
-                      "value" : "%arg two"
+                      "value" : "%f two"
                     }
                   },
                   "other" : {
                     "stringUnit" : {
                       "state" : "translated",
-                      "value" : "%arg twos"
+                      "value" : "%f twos"
                     }
                   }
                 }
@@ -176,7 +176,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ - %#@d2@ - %0$#@zero@ - %#@f3@ - %#@d5@ - %04$#@f4@ - %#@d6@ - %007$@ - %8$3.2#@f8@ - %#@f11@ - %9$@ - %#@d10@"
+            "value" : "%$@ - %#@d2@ - %#@zero@ - %#@f3@ - %#@d5@ - %#@f4@ - %#@d6@ - %$@ - %#@f8@ - %#@f11@ - %9$@ - %#@d10@"
           },
           "substitutions" : {
             "d2" : {
@@ -259,7 +259,8 @@
               }
             },
             "f3" : {
-              "formatSpecifier" : "f",
+              "argNum" : 3,
+              "formatSpecifier" : "d",
               "variations" : {
                 "plural" : {
                   "one" : {
@@ -278,7 +279,8 @@
               }
             },
             "f4" : {
-              "formatSpecifier" : "f",
+              "argNum" : 4,
+              "formatSpecifier" : "d",
               "variations" : {
                 "plural" : {
                   "one" : {
@@ -297,7 +299,7 @@
               }
             },
             "f8" : {
-              "formatSpecifier" : "f",
+              "formatSpecifier" : "d",
               "variations" : {
                 "plural" : {
                   "one" : {
@@ -317,7 +319,7 @@
             },
             "f11" : {
               "argNum" : 11,
-              "formatSpecifier" : "f",
+              "formatSpecifier" : "d",
               "variations" : {
                 "plural" : {
                   "one" : {
@@ -336,6 +338,7 @@
               }
             },
             "zero" : {
+              "argNum" : 1,
               "formatSpecifier" : "d",
               "variations" : {
                 "plural" : {

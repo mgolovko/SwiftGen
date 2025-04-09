@@ -59,10 +59,30 @@ extension Strings {
       from localization: Strings.Localization,
       key: String
     ) throws -> [Strings.PlaceholderType] {
-      let keyValue = localization.stringUnit?.value ?? key
+      var keyValue = localization.stringUnit?.value ?? key
+      
+      for (name, nsrange, _) in StringsDict.variableNames(fromFormatKey: keyValue).reversed() {
+          guard let range = Range(nsrange, in: keyValue) else { continue }
+          guard let valueTypeKey = localization.substitutions?[name] else { continue }
+          
+          let variablePlaceholder = "%\(valueTypeKey.formatSpecifier)"
+          
+          keyValue.replaceSubrange(range, with: variablePlaceholder)
+      }
+        
+//            guard let variable = variables.first(where: { $0.name == name }) else { continue }
+//
+//            let variablePlaceholder: String
+//            if let positionalArgument = positionalArgument {
+//              variablePlaceholder = "%\(positionalArgument)$\(variable.rule.valueTypeKey)"
+//            } else {
+//              variablePlaceholder = "%\(variable.rule.valueTypeKey)"
+//            }
+            
       let placeholderTypes = try Strings.PlaceholderType.placeholderTypes(
         fromFormat: keyValue
       )
+      
       if !placeholderTypes.isEmpty {
         return placeholderTypes
       } else {
